@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace WinForms
 {
-	public partial class Form1 : Form
+	public partial class StatisticsForm : Form
 	{
-		public Form1()
+		public StatisticsForm( string championshipType )
 		{
 			InitializeComponent();
+			label1.Text = championshipType;
 		}
+
+		private void OnFormClosed( object sender, FormClosedEventArgs e ) => Application.Exit();
 	}
 }
