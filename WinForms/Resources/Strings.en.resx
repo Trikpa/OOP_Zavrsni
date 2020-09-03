@@ -117,4 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="attendance" xml:space="preserve">
+    <value>Attendance</value>
+  </data>
+  <data name="awayTeam" xml:space="preserve">
+    <value>Away team</value>
+  </data>
+  <data name="homeTeam" xml:space="preserve">
+    <value>Home team</value>
+  </data>
+  <data name="image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="scoredGoals" xml:space="preserve">
+    <value>Scored goals</value>
+  </data>
+  <data name="unableToFetchData" xml:space="preserve">
+    <value>Error trying to fetch data about representations.</value>
+  </data>
+  <data name="yellowCards" xml:space="preserve">
+    <value>Yellow cards</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
 </root>

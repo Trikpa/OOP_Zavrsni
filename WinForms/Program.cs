@@ -13,8 +13,6 @@ namespace WinForms
 {
 	static class Program
 	{
-		private const string SETTINGS_FILEPATH = "../../settings.json";
-
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
@@ -24,19 +22,19 @@ namespace WinForms
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
-			if ( !File.Exists(SETTINGS_FILEPATH) )
+			if ( !File.Exists(Properties.Settings.Default.Settings_Filepath) )
 				Application.Run(new StartingWindow());
 			else
 			{
 				try
 				{
-					Settings settings = JsonConvert.DeserializeObject<Settings>( File.ReadAllText(SETTINGS_FILEPATH) );
+					Settings settings = JsonConvert.DeserializeObject<Settings>( File.ReadAllText(Properties.Settings.Default.Settings_Filepath) );
 
 					CultureInfo ci = new CultureInfo(settings.Language);
 					Thread.CurrentThread.CurrentCulture = ci;
 					Thread.CurrentThread.CurrentUICulture = ci;
 
-					Application.Run(new StatisticsForm(settings.ChampionshipType));
+					Application.Run(new PlayersForm(settings.ChampionshipType));
 				}
 				catch ( Exception e )
 				{

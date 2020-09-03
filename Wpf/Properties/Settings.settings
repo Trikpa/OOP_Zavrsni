@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Wpf.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Settings_Filepath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">./../../../Settings/settings.json</Value>
+    </Setting>
+    <Setting Name="Representation_Filepath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">./../../../Settings/representation.json</Value>
+    </Setting>
+    <Setting Name="Players_Filepath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">./../../../Settings/players.json</Value>
+    </Setting>
+    <Setting Name="PlayerPictures_Filepath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">./../../../Resources/PlayerImages/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

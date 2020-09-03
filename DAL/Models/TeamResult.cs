@@ -14,7 +14,7 @@ namespace DAL.Models
         public string Country { get; set; }
 
         [JsonProperty("alternate_name")]
-        public object AlternateName { get; set; }
+        public string AlternateName { get; set; }
 
         [JsonProperty("fifa_code")]
         public string FifaCode { get; set; }

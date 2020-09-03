@@ -59,5 +59,104 @@ namespace WinForms.Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Broj posjetitelja.
+        /// </summary>
+        public static string attendance {
+            get {
+                return ResourceManager.GetString("attendance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gosti.
+        /// </summary>
+        public static string awayTeam {
+            get {
+                return ResourceManager.GetString("awayTeam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Domaćin.
+        /// </summary>
+        public static string homeTeam {
+            get {
+                return ResourceManager.GetString("homeTeam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Slika.
+        /// </summary>
+        public static string image {
+            get {
+                return ResourceManager.GetString("image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lokacija.
+        /// </summary>
+        public static string location {
+            get {
+                return ResourceManager.GetString("location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ime.
+        /// </summary>
+        public static string name {
+            get {
+                return ResourceManager.GetString("name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ne.
+        /// </summary>
+        public static string no {
+            get {
+                return ResourceManager.GetString("no", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Broj golova.
+        /// </summary>
+        public static string scoredGoals {
+            get {
+                return ResourceManager.GetString("scoredGoals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Greška kod dohvaćanja podataka o igračima..
+        /// </summary>
+        public static string unableToFetchData {
+            get {
+                return ResourceManager.GetString("unableToFetchData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Žuti kartoni.
+        /// </summary>
+        public static string yellowCards {
+            get {
+                return ResourceManager.GetString("yellowCards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to da.
+        /// </summary>
+        public static string yes {
+            get {
+                return ResourceManager.GetString("yes", resourceCulture);
+            }
+        }
     }
 }

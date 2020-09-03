@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DAL.JsonConverters;
 using DAL.Models.Enums;
 using Newtonsoft.Json;
 
@@ -46,18 +47,19 @@ namespace DAL.Models
         public long Tackles { get; set; }
 
         [JsonProperty("clearances")]
-        public long Clearances { get; set; }
+        public long? Clearances { get; set; }
 
         [JsonProperty("yellow_cards")]
-        public long YellowCards { get; set; }
+        public long? YellowCards { get; set; }
 
         [JsonProperty("red_cards")]
-        public long RedCards { get; set; }
+        public long? RedCards { get; set; }
 
         [JsonProperty("fouls_committed")]
-        public long FoulsCommitted { get; set; }
+        public long? FoulsCommitted { get; set; }
 
         [JsonProperty("tactics")]
+        [JsonConverter(typeof(TacticsConverter))]
         public Tactics Tactics { get; set; }
 
         [JsonProperty("starting_eleven")]

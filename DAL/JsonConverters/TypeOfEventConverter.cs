@@ -29,9 +29,11 @@ namespace DAL.JsonConverters
                     return TypeOfEvent.YellowCard;
                 case "yellow-card-second":
                     return TypeOfEvent.YellowCardSecond;
+                case "red-card":
+                    return TypeOfEvent.RedCard;
+                default:
+                    return TypeOfEvent.Undefined;
             }
-
-            throw new Exception("Cannot unmarshal type TypeOfEvent");
         }
 
         public override void WriteJson( JsonWriter writer, object untypedValue, JsonSerializer serializer )

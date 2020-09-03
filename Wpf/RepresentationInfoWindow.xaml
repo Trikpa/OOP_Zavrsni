@@ -1,0 +1,107 @@
+﻿<Window
+	x:Class="Wpf.RepresentationInfoWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:lang="clr-namespace:Wpf.Resources"
+	xmlns:local="clr-namespace:Wpf"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	Title="RepresentationInfoWindow"
+	Width="345"
+	Height="244"
+	WindowStartupLocation="CenterScreen"
+	mc:Ignorable="d">
+
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="Window.Loaded">
+			<EventTrigger.Actions>
+				<BeginStoryboard>
+					<Storyboard BeginTime="0" Duration="00:00:01">
+						<DoubleAnimation
+							AutoReverse="False"
+							BeginTime="0:0:0"
+							RepeatBehavior="1x"
+							Storyboard.TargetProperty="(Window.Left)"
+							From="0"
+							To="500"
+							Duration="00:00:01" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger.Actions>
+		</EventTrigger>
+	</Window.Triggers>
+
+	<StackPanel>
+		<!--  naziv  -->
+		<StackPanel Orientation="Horizontal">
+			<Label
+				Content="{x:Static lang:Strings.Representation}"
+				FontSize="12"
+				FontWeight="Bold" />
+			<Label x:Name="lblRepresentationName" Content="Croatia (CRO)" />
+		</StackPanel>
+
+		<!--  broj odigranih utakmica  -->
+		<StackPanel Orientation="Horizontal">
+			<Label
+				Content="{x:Static lang:Strings.GamesPlayed}"
+				FontSize="12"
+				FontWeight="Bold" />
+			<Label x:Name="lblGamesPlayed" Content="10" />
+		</StackPanel>
+
+		<!--  broj pobjeda  -->
+		<StackPanel Orientation="Horizontal">
+			<Label
+				Content="{x:Static lang:Strings.Wins}"
+				FontSize="12"
+				FontWeight="Bold" />
+			<Label x:Name="lblGamesWon" Content="5" />
+		</StackPanel>
+
+		<!--  broj poraza  -->
+		<StackPanel Orientation="Horizontal">
+			<Label
+				Content="{x:Static lang:Strings.Losses}"
+				FontSize="12"
+				FontWeight="Bold" />
+			<Label x:Name="lblGamesLost" Content="3" />
+		</StackPanel>
+
+		<!--  broj nerijesenih  -->
+		<StackPanel Orientation="Horizontal">
+			<Label
+				Content="{x:Static lang:Strings.Draws}"
+				FontSize="12"
+				FontWeight="Bold" />
+			<Label x:Name="lblGamesDrew" Content="2" />
+		</StackPanel>
+
+		<!--  broj zabijenih golova  -->
+		<StackPanel Orientation="Horizontal">
+			<Label
+				Content="{x:Static lang:Strings.GoalsScored}"
+				FontSize="12"
+				FontWeight="Bold" />
+			<Label x:Name="lblGoalsScored" Content="10" />
+		</StackPanel>
+
+		<!--  broj primljenih golova  -->
+		<StackPanel Orientation="Horizontal">
+			<Label
+				Content="{x:Static lang:Strings.GoalsReceived}"
+				FontSize="12"
+				FontWeight="Bold" />
+			<Label x:Name="lblGoalsReceived" Content="10" />
+		</StackPanel>
+
+		<!--  gol razlika  -->
+		<StackPanel Orientation="Horizontal">
+			<Label
+				Content="{x:Static lang:Strings.GoalDifference}"
+				FontSize="12"
+				FontWeight="Bold" />
+			<Label x:Name="lblGoalDifference" Content="0" />
+		</StackPanel>
+	</StackPanel>
+</Window>

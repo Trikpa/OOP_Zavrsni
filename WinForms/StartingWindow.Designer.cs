@@ -57,7 +57,7 @@
 			// 
 			resources.ApplyResources(this.btnMale, "btnMale");
 			this.btnMale.Name = "btnMale";
-			this.btnMale.Tag = "male";
+			this.btnMale.Tag = "Male";
 			this.btnMale.UseVisualStyleBackColor = true;
 			this.btnMale.Click += new System.EventHandler(this.GenderSelected);
 			// 
@@ -65,7 +65,7 @@
 			// 
 			resources.ApplyResources(this.btnFemale, "btnFemale");
 			this.btnFemale.Name = "btnFemale";
-			this.btnFemale.Tag = "female";
+			this.btnFemale.Tag = "Female";
 			this.btnFemale.UseVisualStyleBackColor = true;
 			this.btnFemale.Click += new System.EventHandler(this.GenderSelected);
 			// 

@@ -8,8 +8,8 @@ namespace DAL.Utilities.Interfaces
 {
 	public interface IRepresentationRepo
 	{
-		Task< IEnumerable<TeamResult> > GetAllRepresentations();
-		Task<TeamResult> GetRepresentation( string fifaCode );
-		Task<IEnumerable<Player>> GetPlayers( string fifaCode );
+		Task< IList<Representation> > GetAllTeams();
+		Task< List<Player> > GetPlayers( string fifaCode );
+		Task<List<Match>> GetMatchesForCountry( Representation representation );
 	}
 }

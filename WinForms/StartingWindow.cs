@@ -12,12 +12,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL.Utilities;
+using DAL.Models.Enums;
 
 namespace WinForms
 {
 	public partial class StartingWindow : Form
 	{
-		private const string SETTINGS_FILEPATH = "../../settings.json";
 		public StartingWindow()
 		{
 			InitializeComponent();
@@ -33,69 +33,30 @@ namespace WinForms
 		private void CbLanguage_SelectedIndexChanged( object sender, EventArgs e )
 		{
 			var chosenLanguage = ( sender as ComboBox ).SelectedItem as Language;
-			SetCulture(chosenLanguage.Tag);
+			Utilities.SetCultureForForm(chosenLanguage.Tag, this);
 		}
 
 		private void GenderSelected( object sender, EventArgs e )
 		{
 			var clickedButton = sender as Button;
+			var chosenChampionship = (ChampionshipType)Enum.Parse(typeof(ChampionshipType), clickedButton.Tag.ToString());
 
-			SaveSettings(clickedButton.Tag.ToString());
-			OpenNextForm(clickedButton.Tag.ToString());
-		}
-
-		private void OpenNextForm( string championshipType )
-		{
-			this.Hide();
-			new StatisticsForm(championshipType).Show();
-		}
-
-		private void SaveSettings( string championshipType )
-		{
-			string selectedChampionship = "male";
-
-			switch ( championshipType )
-			{
-				case "male":
-					selectedChampionship = "male";
-					break;
-				case "female":
-					selectedChampionship = "female";
-					break;
-			}
-
-			var settings = new Settings
-			{
-				ChampionshipType = selectedChampionship,
-				Language = Thread.CurrentThread.CurrentUICulture.Name
-			};
-
-			string serializedString = JsonConvert.SerializeObject(settings);
 			try
 			{
-				File.WriteAllText(SETTINGS_FILEPATH, serializedString);
+				Settings.SaveSettings(chosenChampionship, Properties.Settings.Default.Settings_Filepath);
 			}
-			catch ( Exception e )
+			catch ( Exception ex )
 			{
-				MessageBox.Show($"Error! {e.Message}");
+				MessageBox.Show($"Error while trying to save settings. {ex.Message}");
 			}
+
+			OpenChampionshipForm(chosenChampionship);
 		}
 
-		private void SetCulture( string culture )
+		private void OpenChampionshipForm( ChampionshipType championshipType )
 		{
-			CultureInfo ci = new CultureInfo(culture);
-			Thread.CurrentThread.CurrentCulture = ci;
-			Thread.CurrentThread.CurrentUICulture = ci;
-
-			foreach ( Control control in Controls )
-			{
-				var resources = new ComponentResourceManager(typeof(StartingWindow));
-
-				var text = resources.GetString(control.Name + ".Text", ci);
-
-				if ( text != null )
-					control.Text = text;
-			}
+			this.Hide();
+			new PlayersForm(championshipType).Show();
 		}
 	}
 }

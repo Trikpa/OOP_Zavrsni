@@ -117,4 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="attendance" xml:space="preserve">
+    <value>Broj posjetitelja</value>
+  </data>
+  <data name="awayTeam" xml:space="preserve">
+    <value>Gosti</value>
+  </data>
+  <data name="homeTeam" xml:space="preserve">
+    <value>Domaćin</value>
+  </data>
+  <data name="image" xml:space="preserve">
+    <value>Slika</value>
+  </data>
+  <data name="location" xml:space="preserve">
+    <value>Lokacija</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>ne</value>
+  </data>
+  <data name="scoredGoals" xml:space="preserve">
+    <value>Broj golova</value>
+  </data>
+  <data name="unableToFetchData" xml:space="preserve">
+    <value>Greška kod dohvaćanja podataka o igračima.</value>
+  </data>
+  <data name="yellowCards" xml:space="preserve">
+    <value>Žuti kartoni</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>da</value>
+  </data>
 </root>

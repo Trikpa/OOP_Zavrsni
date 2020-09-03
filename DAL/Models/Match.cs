@@ -44,7 +44,7 @@ namespace DAL.Models
         public string AwayTeamCountry { get; set; }
 
         [JsonProperty("datetime")]
-        public DateTimeOffset Datetime { get; set; }
+        public DateTimeOffset? Datetime { get; set; }
 
         [JsonProperty("winner")]
         public string Winner { get; set; }
@@ -58,22 +58,22 @@ namespace DAL.Models
         [JsonProperty("away_team")]
         public Team AwayTeam { get; set; }
 
-        [JsonProperty("home_team_events")]
-        public List<TeamEvent> HomeTeamEvents { get; set; }
+		[JsonProperty("home_team_events")]
+		public List<TeamEvent> HomeTeamEvents { get; set; }
 
-        [JsonProperty("away_team_events")]
-        public List<TeamEvent> AwayTeamEvents { get; set; }
+		[JsonProperty("away_team_events")]
+		public List<TeamEvent> AwayTeamEvents { get; set; }
 
-        [JsonProperty("home_team_statistics")]
+		[JsonProperty("home_team_statistics")]
         public TeamStatistics HomeTeamStatistics { get; set; }
 
         [JsonProperty("away_team_statistics")]
         public TeamStatistics AwayTeamStatistics { get; set; }
 
         [JsonProperty("last_event_update_at")]
-        public DateTimeOffset LastEventUpdateAt { get; set; }
+        public DateTimeOffset? LastEventUpdateAt { get; set; }
 
         [JsonProperty("last_score_update_at")]
-        public DateTimeOffset LastScoreUpdateAt { get; set; }
+        public DateTimeOffset? LastScoreUpdateAt { get; set; }
     }
 }

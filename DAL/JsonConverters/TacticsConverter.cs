@@ -15,20 +15,25 @@ namespace DAL.JsonConverters
             if ( reader.TokenType == JsonToken.Null ) return null;
 
             var value = serializer.Deserialize<string>(reader);
-            switch ( value )
-            {
-                case "4-3-3":
-                    return Tactics.The433;
-                case "4-4-2":
-                    return Tactics.The442;
-                case "4-5-1":
-                    return Tactics.The451;
-            }
 
-            throw new Exception("Cannot unmarshal type Tactics");
-        }
+			switch ( value )
+			{
+				case "4-3-3":
+					return Tactics.The433;
+				case "4-4-2":
+					return Tactics.The442;
+				case "4-5-1":
+					return Tactics.The451;
+				case "5-3-2":
+					return Tactics.The532;
+				case "5-4-1":
+					return Tactics.The541;
+				default:
+					return Tactics.Unknown;
+			}
+		}
 
-        public override void WriteJson( JsonWriter writer, object untypedValue, JsonSerializer serializer )
+		public override void WriteJson( JsonWriter writer, object untypedValue, JsonSerializer serializer )
         {
             if ( untypedValue == null )
             {
@@ -53,5 +58,5 @@ namespace DAL.JsonConverters
         }
 
         public static readonly TacticsConverter Singleton = new TacticsConverter();
-    }
+	}
 }

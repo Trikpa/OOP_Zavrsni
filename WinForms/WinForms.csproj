@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,12 +32,19 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.11.4.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.4\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PlayerUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayerUC.Designer.cs">
+      <DependentUpon>PlayerUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Strings.en.Designer.cs">
@@ -60,11 +74,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StartingWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StartingWindow.Designer.cs">
       <DependentUpon>StartingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayersForm.Designer.cs">
+      <DependentUpon>PlayersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StatisticsForm.cs">
       <SubType>Form</SubType>
@@ -72,6 +99,12 @@
     <Compile Include="StatisticsForm.Designer.cs">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PlayerUC.en.resx">
+      <DependentUpon>PlayerUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerUC.resx">
+      <DependentUpon>PlayerUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -80,6 +113,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Resources\Strings.en.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -89,15 +123,31 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.en.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartingWindow.en.resx">
       <DependentUpon>StartingWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartingWindow.resx">
       <DependentUpon>StartingWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PlayersForm.en.resx">
+      <DependentUpon>PlayersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayersForm.resx">
+      <DependentUpon>PlayersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticsForm.en.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,5 +167,21 @@
       <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_icon-48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_icon-24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star_unfilled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default-profile-picture-100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star_filled.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

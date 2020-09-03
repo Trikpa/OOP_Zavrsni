@@ -8,6 +8,9 @@ namespace DAL.Models.Enums
 	{
 		The433,
 		The442,
-		The451
+		The451,
+		The532,
+		The541,
+		Unknown
 	}
 }

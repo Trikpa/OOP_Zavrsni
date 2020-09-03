@@ -7,10 +7,13 @@ namespace DAL.Models.Enums
 	public enum TypeOfEvent
 	{
 		Goal,
+		GoalOwn,
 		GoalPenalty,
 		SubstitutionIn,
 		SubstitutionOut,
 		YellowCard,
-		YellowCardSecond
+		YellowCardSecond,
+		RedCard,
+		Undefined
 	}
 }
